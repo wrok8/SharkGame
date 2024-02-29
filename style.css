@@ -5,7 +5,7 @@
 
 body{
     height: 100vh;
-    background: #584040;
+    background: #2b3a69;
     display: flex;
     align-items: center;
 }
@@ -66,10 +66,9 @@ body{
 
     background: url(img/suelo.png) repeat-x 0px 0px;
     background-size: 50% 42px;
-
 }
 
-.medusa{
+.cactus{
     width: 48px;
     height: 96px;
 
@@ -78,16 +77,12 @@ body{
     left: 600px;
     z-index: 1;
 
-    background: url(img/cactus1.png) repeat-x 0px 0px;
-    background-size: 92px 96px;
-    background-position-x: 0px;
+    background: url(img/cactus1.png) no-repeat
 }
-.medusa-animacion {
-    animation: animarMedusa 2s steps(3) infinite;
-}
+
 .cactus2{
     width: 98px;
-    height: 66px;
+    height: 96px;
 
     background: url(img/cactus2.png) no-repeat;
 }
@@ -112,7 +107,7 @@ body{
     right: 15px;
     z-index: 10;
 
-    color: #0e7bd4;
+    color: #ffffff;
     font-family: Verdana;
     font-size: 30px;
     font-weight: bold;
@@ -127,7 +122,7 @@ body{
 
 
     text-align: center;
-    color: #0e7bd4;
+    color: #ffffff;
     font-size: 30px;
     font-family: Verdana;
     font-weight: 700;
@@ -142,11 +137,31 @@ body{
     }
 }
 
-@keyframes animarMedusa{
-    from{
-        background-position-x: -48px;
+
+@keyframes moverCactus {
+    from {
+        background-position: 0px 0px; /* Posición inicial del sprite */
     }
-    to{
-        background-position-x: -92px;
+    to {
+        background-position: -92px 0px; /* Posición final del sprite */
     }
+}
+@keyframes moverCactus2 {
+    from {
+        background-position: 0px 0px; /* Posición inicial del sprite */
+    }
+    to {
+        background-position:  0px -128px; /* Posición final del sprite */
+    }
+}
+
+/* Aplica la animación a los elementos con la clase .cactus y excluye los elementos con la clase .cactus2 */
+.cactus {
+    animation: moverCactus 1s steps(2) infinite;
+}
+
+.cactus2 {
+    /* Otros estilos de los cactus */
+    /* Asigna la animación solo a los elementos con la clase .cactus */
+    animation: moverCactus2 1s steps(2) infinite;
 }

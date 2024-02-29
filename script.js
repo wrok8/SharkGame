@@ -64,6 +64,7 @@ function Start() {
     textoScore = document.querySelector(".score");
     dino = document.querySelector(".dino");
     document.addEventListener("keydown", HandleKeyDown);
+
 }
 
 function Update() {
@@ -75,7 +76,7 @@ function Update() {
     DecidirCrearNubes();
     MoverObstaculos();
     MoverNubes();
-    DetectarColision();
+    DetectarColision(); 
 
     velY -= gravedad * deltaTime;
 }
@@ -239,6 +240,7 @@ function DetectarColision() {
     }
 }
 
+
 function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft) {
     var aRect = a.getBoundingClientRect();
     var bRect = b.getBoundingClientRect();
@@ -250,4 +252,5 @@ function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft)
         (aRect.left + paddingLeft > (bRect.left + bRect.width))
     );
 }
+
 
