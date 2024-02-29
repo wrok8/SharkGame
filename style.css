@@ -17,7 +17,7 @@ body{
     
     position: relative;
 
-    background: linear-gradient(#36b5ffe8, transparent) #1e67c7;/*linear-gradient(#90ebff, white);*/
+    background: linear-gradient(#36b5ffe8, transparent) #4e98f8;/*linear-gradient(#90ebff, white);*/
     transition: background-color 1s linear;
     overflow: hidden;
 }
@@ -69,8 +69,8 @@ body{
 
 }
 
-.cactus{
-    width: 46px;
+.medusa{
+    width: 48px;
     height: 96px;
 
     position: absolute;
@@ -82,8 +82,8 @@ body{
     background-size: 92px 96px;
     background-position-x: 0px;
 }
-.dino-corriendo {
-    animation: animarDino 0.25s steps(2) infinite;
+.medusa-animacion {
+    animation: animarMedusa 2s steps(3) infinite;
 }
 .cactus2{
     width: 98px;
@@ -119,8 +119,6 @@ body{
     text-align: right;
 }
 
-
-
 .game-over{
     display: none;
 
@@ -141,5 +139,14 @@ body{
     }
     to{
         background-position-x: -252px;
+    }
+}
+
+@keyframes animarMedusa{
+    from{
+        background-position-x: -48px;
+    }
+    to{
+        background-position-x: -92px;
     }
 }
