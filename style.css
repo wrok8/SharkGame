@@ -17,21 +17,21 @@ body{
     
     position: relative;
 
-    background: linear-gradient(#b7d6c7, transparent) #ffe2d1;/*linear-gradient(#90ebff, white);*/
+    background: linear-gradient(#36b5ffe8, transparent) #1e67c7;/*linear-gradient(#90ebff, white);*/
     transition: background-color 1s linear;
     overflow: hidden;
 }
 
 .mediodia {
-    background-color: #ffdcf3;
+    background-color: #2567be;
 }
 
 .tarde {
-    background-color: #ffadad;
+    background-color: #12488d;
 }
 
 .noche {
-    background-color: #aca8c7;
+    background-color: #020b42;
 }
 
 .dino {
@@ -78,7 +78,12 @@ body{
     left: 600px;
     z-index: 1;
 
-    background: url(img/cactus1.png) no-repeat;
+    background: url(img/cactus1.png) repeat-x 0px 0px;
+    background-size: 92px 96px;
+    background-position-x: 0px;
+}
+.dino-corriendo {
+    animation: animarDino 0.25s steps(2) infinite;
 }
 .cactus2{
     width: 98px;

@@ -1,5 +1,3 @@
-
-
 var time = new Date();
 var deltaTime = 0;
 
