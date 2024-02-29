@@ -136,7 +136,7 @@ body{
         background-position-x: -252px;
     }
 }
-
+/* comentario de prueba*/
 @keyframes moverCactus {
     from {
         background-position: 0px 0px; /* Posición inicial del sprite */
