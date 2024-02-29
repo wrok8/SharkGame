@@ -150,7 +150,7 @@ body{
         background-position: 0px 0px; /* Posición inicial del sprite */
     }
     to {
-        background-position:  0px -128px; /* Posición final del sprite */
+        background-position:  0px -192px; /* Posición final del sprite */
     }
 }
 
