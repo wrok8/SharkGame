@@ -56,15 +56,57 @@ var dino;
 var textoScore;
 var suelo;
 var gameOver;
+var restart;
 
 function Start() {
     gameOver = document.querySelector(".game-over");
+    restart = document.querySelector(".restart");
     suelo = document.querySelector(".suelo");
     contenedor = document.querySelector(".contenedor");
     textoScore = document.querySelector(".score");
     dino = document.querySelector(".dino");
     document.addEventListener("keydown", HandleKeyDown);
+    
+}
+function reiniciar() {
+       // Reiniciar todas las variables del juego
+    parado = false;
+    saltando = false;
+    dinoPosY = sueloY;
+    velY = 0;
+    sueloX = 0;
+    score = 0;
+    gameVel = 1;
+    tiempoHastaObstaculo = 2;
+    tiempoHastaNube = 0.5;
+    obstaculos = [];
+    nubes = [];
 
+    // Reiniciar la apariencia del dinosaurio
+    dino.classList.remove("dino-estrellado");
+    dino.classList.add("dino-corriendo");
+
+    // Reiniciar el suelo
+    suelo.style.animationDuration = "3s";
+    contenedor.className = "contenedor";
+
+    // Reiniciar el marcador de puntuación
+    textoScore.innerText = "0";
+
+    // Limpiar los cactus eliminando todos los elementos con la clase "cactus"
+    var cactusElements = document.querySelectorAll('.cactus');
+    for (var i = 0; i < cactusElements.length; i++) {
+        contenedor.removeChild(cactusElements[i]);
+    }
+
+    // Limpiar las nubes eliminando todos los elementos con la clase "nube"
+    var nubeElements = document.querySelectorAll('.nube');
+    for (var i = 0; i < nubeElements.length; i++) {
+        contenedor.removeChild(nubeElements[i]);
+    }
+
+    // Comenzar el juego
+    Loop();
 }
 
 function Update() {
@@ -222,9 +264,22 @@ function GanarPuntos() {
     suelo.style.animationDuration = (3/gameVel)+"s";
 }
 
+
 function GameOver() {
     Estrellarse();
     gameOver.style.display = "block";
+    restart.style.display = "block"
+
+    restart.addEventListener("click", reiniciarNivel);
+}
+
+function reiniciarNivel() {
+    // Ocultar el mensaje de game over y el botón de reiniciar
+    gameOver.style.display = "none";
+    restart.style.display = "none";
+
+    // Reiniciar el nivel
+    reiniciar();
 }
 
 function DetectarColision() {

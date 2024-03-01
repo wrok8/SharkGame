@@ -114,6 +114,20 @@ body{
     text-align: right;
 }
 
+.restart{
+    position: relative;
+    display: none;
+    margin: auto;
+    margin-top: 180px;
+    font-size: 20px;
+    font-family: Verdana;
+    font-weight: 700;
+  
+    color: #3263be;
+    background-color: #ffffff00;
+    border: none;
+    z-index: 4;
+}
 .game-over{
     display: none;
 
@@ -126,6 +140,7 @@ body{
     font-size: 30px;
     font-family: Verdana;
     font-weight: 700;
+
 }
 
 @keyframes animarDino{
